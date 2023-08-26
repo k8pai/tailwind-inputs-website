@@ -1,0 +1,39 @@
+{
+	"index": "Getting Started",
+	"Components": {
+		"type": "separator",
+		"title": "Components"
+	},
+	"tibutton": "Ti Button",
+	"ticheckbox": "Ti Checkbox",
+	"ticombobox": "Ti Combobox",
+	"tidisclosure": "Ti Disclosure",
+	"tifiles": "Ti Files",
+	"tifloatinglabel": "Ti Floating Label",
+	"tiform": "Ti Form",
+	"tilabel": "Ti label",
+	"timail": "Ti mail",
+	"timodal": "Ti modal",
+	"timultiselect": "Ti multiselect",
+	"tinumber": "Ti number",
+	"tipassword": "Ti password",
+	"tiradio": "Ti radio",
+	"tirange": "Ti range",
+	"tisearch": "Ti search",
+	"tisearchwithtag": "Ti searchwithtag",
+	"tiselect": "Ti select",
+	"titext": "Ti text",
+	"titextarea": "Ti textarea",
+	"titoggle": "Ti toggle",
+	"Validations": {
+		"type": "separator",
+		"title": "Additionals"
+	},
+
+	"contact": {
+		"title": "Contact ↗",
+		"type": "page",
+		"href": "https://twitter.com/shuding_",
+		"newWindow": true
+	}
+}

@@ -1,11 +1,119 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+import { Heading, Navigation, MyComponent, Features } from './helpers';
+import { Bleed } from 'nextra-theme-docs';
 
-## What is Nextra?
+<Bleed>
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+# <Heading />
 
-## Documentation
+<Features />
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+A dynamic component-based library that puts the spotlight on form-centric design. Built with Tailwind CSS at its core. Seamlessly customizable and intuitively designed, Tailwind Inputs redefines how you approach form creation, making your design journey as smooth as it is inspiring.
+
+<Navigation />
+</Bleed>
+
+## Overview
+
+`tailwind-inputs` components can be used as similar to any other components you'd use in your project...
+
+```js copy
+import {
+	TiForm,
+	TiText,
+	TiMail,
+	TiPassword,
+	TiButton,
+} from '@k8pai/tailwind-inputs';
+
+const MyComponent = () => {
+	const handleSubmit = (values) => {
+		console.log(values);
+	};
+
+	return (
+		<TiForm className="w-full bg-transparent" onSubmit={handleSubmit}>
+			<TiText
+				name={'username'}
+				label={'Username'}
+				placeholder={'Enter Your Username'}
+				mandatory
+				style={{
+					label: 'text-white font-semibold tracking-wide ml-3',
+					size: 'max-w-full',
+				}}
+				validate={'username'}
+				error="This is not a valid username!"
+				className={'space-y-2'}
+			/>
+			<TiMail
+				name={'mail'}
+				label={'E Mail'}
+				mandatory
+				style={{
+					label: 'text-white font-semibold tracking-wide ml-3',
+				}}
+				error="This is not a valid Mail!"
+				className={'space-y-2'}
+			/>
+			<TiPassword
+				name={'password'}
+				label={'Password'}
+				mandatory
+				style={{
+					label: 'text-white font-semibold tracking-wide ml-3',
+				}}
+				error="This is not a valid Password!"
+				className={'space-y-2'}
+			/>
+			<TiButton
+				type={'submit'}
+				title={'Submit'}
+				className={
+					'px-3 py-2 mt-2 rounded-lg text-white bg-green-500/90 '
+				}
+			/>
+		</TiForm>
+	);
+};
+
+export default MyComponent;
+```
+
+## Components
+
+A list of all the component that are currently available to use As of for now are mentioned below.
+A combination of stable and unstable versions of the components are in the list....
+
+---
+
+-   TiButton ✅
+-   TiCheckbox
+-   TiCombobox ✅
+-   TiDisclosure ✅
+-   TiFiles
+-   TiFloatingLabel ✅
+-   TiForm ✅
+-   TiLabel ✅
+-   TiMail ✅
+-   TiModal ✅
+-   TiMultiSelect ✅
+-   TiNumber
+-   TiPassword ✅
+-   TiRadio
+-   TiRange
+-   TiSearch ✅
+-   TiSearchWithTag ✅
+-   TiSelect ✅
+-   TiText ✅
+-   TiTextarea
+-   TiToggle ✅
+
+<details>
+	<summary>Note</summary>
+    **Stable versions** ✅ - components that need no further updates for working features and are currently fine-grained to use. <br />
+    **Unstable versions** - are currently in updates and may have strict changes in props or use cases.
+
+    Whenever using an unstable Component, it is a good practice to go through the
+    latest documentation...
+
+</details>

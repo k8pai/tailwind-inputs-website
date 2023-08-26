@@ -1,0 +1,101 @@
+# Getting Started
+
+## Prerequisites
+
+-   Project should be tailwind css configured.
+-   Reactjs / Nextjs projects.
+
+## Installation and Configuration
+
+### installation
+
+You can easily install `@k8pai/tailwind-inputs` using npm. Open the terminal inside your project directory and run the following command:
+
+```bash copy
+npm i @k8pai/tailwind-inputs@latest --save
+```
+
+### configuring files
+
+You should add the path of the package to your `content` array of the `tailwind.config.js` file.
+
+```js copy {10-11}
+// tailwind.config.js
+module.exports = {
+	content: [
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+
+		// Or if using `src` directory:
+		'./src/**/*.{js,ts,jsx,tsx,mdx}',
+
+		// Adding path of the package to the content array...
+		'./node_modules/@k8pai/tailwind-inputs/**/*.js',
+	],
+	theme: {
+		extend: {},
+	},
+	plugins: [],
+};
+```
+
+## Usage
+
+Once the installation is complete, you can start using the components in your React application. Here's how you can import and utilize them:
+
+**1. Import the Components**:
+
+In your React component file, import the input components you want to use:
+
+```jsx copy
+import { TiButton, TiForm, TiText } from '@k8pai/tailwind-inputs';
+```
+
+**2. Use the Components**:
+
+Start using the imported components in your JSX code:
+
+```jsx copyimport React from 'react';
+import { TiButton, TiForm, TiText } from '@k8pai/tailwind-inputs';
+
+const MyForm = () => {
+	const handleSubmit = (values) => {
+		console.log(values);
+	};
+
+	return (
+		<TiForm className="w-full bg-transparent" onSubmit={handleSubmit}>
+			<TiText
+				name={'username'}
+				label={'Username'}
+				placeholder={'Enter Your Username'}
+				mandatory
+				style={{
+					label: 'text-white font-semibold tracking-wide ml-3',
+				}}
+				validate={'username'}
+				error="This is not a valid username!"
+				className={'space-y-2'}
+			/>
+			<TiButton
+				type={'submit'}
+				title={'Submit'}
+				className={
+					'px-3 py-2 mt-2 rounded-lg text-white bg-gray-500/90'
+				}
+			/>
+		</TiForm>
+	);
+};
+
+export default MyForm;
+```
+
+**3. Customization**:
+
+The `@k8pai/tailwind-inputs` library is built to be highly customizable. You can apply Tailwind CSS classes, modify styles, and pass additional props to each input component to suit your project's design and functionality requirements.
+
+## Examples
+
+For more comprehensive examples, you can explore the `examples` directory in the `@k8pai/tailwind-inputs` GitHub repository. These examples showcase various use cases and customization options available to you.
