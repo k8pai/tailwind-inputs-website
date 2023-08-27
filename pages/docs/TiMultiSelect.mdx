@@ -1,0 +1,66 @@
+# Ti Multi Select
+
+The `TiMultiSelect` component is a customizable multiple selection input built using React. It provides a user-friendly way to select multiple options from a list.
+
+## Usage
+
+Follow these steps to integrate the `TiMultiSelect` component into your React application:
+
+**Import the Component**: In the file where you want to use the `TiMultiSelect` component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiMultiSelect } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Component**: You can now use the `TiMultiSelect` component in your JSX by passing the necessary props:
+
+```jsx copy
+<TiMultiSelect
+	name="fruit"
+	label="Select Fruits"
+	options={[
+		{ name: 'Apple', value: 'apple' },
+		{ name: 'Banana', value: 'banana' },
+		// Add more options here
+	]}
+	onChange={(selectedOptions) => console.log(selectedOptions)}
+/>
+```
+
+## Props
+
+The `TiMultiSelect` component accepts the following props:
+
+-   `name` (required): A unique identifier for the component.
+-   `label`: The label to display above the input.
+-   `value`: The initial selected values (an array of objects with name and value properties).
+-   `style`: An object to customize the component's appearance (e.g., mode, size, etc.).
+-   `options` (required): An array of options to choose from, each having name and value properties.
+-   `onChange`: A callback function triggered when selections are made or changed.
+-   `mandatory`: A boolean indicating if the selection is mandatory.
+-   `indicator`: A boolean indicating if a checkmark indicator should be shown next to selected options.
+-   `placeholder`: The text to display when no options are selected.
+-   `...rest`: Any additional props you want to pass to the component.
+
+## Example
+
+Here's a more comprehensive example demonstrating how to use the `TiMultiSelect` component with various props:
+
+```jsx copy
+<TiMultiSelect
+	name="colors"
+	label="Select Colors"
+	options={[
+		{ name: 'Red', value: 'red' },
+		{ name: 'Blue', value: 'blue' },
+		{ name: 'Green', value: 'green' },
+		// Add more options here
+	]}
+	onChange={(selectedOptions) => console.log(selectedOptions)}
+	mandatory={true}
+	indicator={true}
+	placeholder="Choose colors"
+	style={{ mode: 'dark' }}
+/>
+```

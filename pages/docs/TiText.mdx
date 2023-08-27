@@ -1,0 +1,99 @@
+# Ti Text
+
+The `TiText` component is a text input component that allows users to enter and validate text input.
+
+## Usage
+
+**Import the Component**: In the file where you want to use the `TiText ` component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiText } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Component**: You can now use the `TiText ` component in your JSX by passing the necessary props:
+
+```jsx copy {5-14}
+function App() {
+	return (
+		<div>
+			{/* Example usage of TiButton */}
+			<TiText
+				name="textInput"
+				label="Text Input"
+				placeholder="Enter your text"
+				validate="required"
+				error="This field is required"
+				defaultValue=""
+				autoComplete="off"
+				// ...other props
+			/>
+		</div>
+	);
+}
+```
+
+## Props
+
+-   `name` (required): The name of the input field. This is used to identify the input in the form.
+
+-   `label`: The label text for the input field.
+
+-   `style`: An object to customize the component's style, including color, background, border, etc.
+
+-   `loader`: Whether to display a loading spinner during validation.
+
+-   `disabled`: Whether the input should be disabled.
+
+-   `readOnly`: Whether the input should be read-only.
+
+-   `validate`: Validation rule for the input value (e.g., `'required'`, `'email'`, custom function).
+
+-   `mandatory`: Whether the field is mandatory. Displays a red asterisk (\*) next to the label.
+
+-   `placeholder`: Placeholder text for the input field.
+
+-   `readOnlyText`: Whether the input's value should appear as read-only text.
+
+-   `defaultValue`: Default value for the input field.
+
+-   `autoComplete`: Autocomplete behavior for the input.
+
+-   `error`: Error message to display when validation fails.
+
+## Examples
+
+### Basic Usage
+
+```jsx copy
+<TiText
+	name="username"
+	label="Username"
+	placeholder="Enter your username"
+	validate="required"
+	error="Username is required"
+/>
+```
+
+### Readonly Input
+
+```jsx copy
+<TiText
+	name="readOnlyInput"
+	label="Read-only Input"
+	defaultValue="Read-only Value"
+	readOnly
+	readOnlyText
+/>
+```
+
+### Disabled Input
+
+```jsx copy
+<TiText
+	name="disabledInput"
+	label="Disabled Input"
+	defaultValue="Initial value"
+	disabled
+/>
+```

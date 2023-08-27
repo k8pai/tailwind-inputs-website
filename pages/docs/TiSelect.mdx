@@ -1,0 +1,92 @@
+# Ti Select
+
+The `TiSelect` component is a customizable dropdown select input built using React. It allows users to choose an option from a list of choices.
+
+## Usage
+
+**Import the Component**: In the file where you want to use the `TiSelect` component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiSelect } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Component**: You can now use the `TiSelect` component in your JSX by passing the necessary props:
+
+```jsx copy {11-16}
+function App() {
+	const options = [
+		{ name: 'Option 1', value: 'option1' },
+		{ name: 'Option 2', value: 'option2' },
+		{ name: 'Option 3', value: 'option3', disable: true },
+	];
+
+	return (
+		<div>
+			{/* Example usage of TiButton */}
+			<TiSelect
+				name="selectOption"
+				value="option2"
+				options={options}
+				onChange={(value) => console.log('Selected option:', value)}
+			/>
+		</div>
+	);
+}
+```
+
+## Props
+
+The `TiSelect` component accepts the following props:
+
+-   `name` (required): A unique identifier for the component.
+-   `value`: The currently selected value.
+-   `indicator`: Whether to display a checkmark indicator for the selected option.
+-   `options` (required): An array of options to display in the dropdown.
+-   `onChange`: A callback function triggered when an option is selected.
+-   `style`: An object to customize the component's appearance (e.g., `mode`, `size`, etc.).
+
+### `Options` in detail
+
+The `options` field in the `TiSelect` component accepts an array of objects, where each object represents an option that can be selected from the dropdown. Each option object should have certain properties to define its behavior and display.
+
+```jsx copy
+const options = [
+	{ name: 'Option 1', value: 'option1', disable: false },
+	{ name: 'Option 2', value: 'option2', disable: true },
+	// ...
+];
+```
+
+-   `name` (required): This property represents the display name or label of the option that will be shown in the dropdown. It's what users will see when they interact with the component. Example: `'Option 1'`
+
+-   `value` (required): The value associated with the option. This value will be passed to the `onChange` callback when the option is selected. It's used to identify which option was chosen. Example: `'option1'`
+
+-   `disable`: An optional property that determines whether the option should be disabled or not. If `disable` is set to `true`, the option will be grayed out and cannot be selected. If not specified, the option is assumed to be enabled. Example: `true`
+
+## Example
+
+Here's an example demonstrating how to use the `TiSelect` component with various props:
+
+```jsx copy
+function App() {
+	const options = [
+		{ name: 'Apple', value: 'apple' },
+		{ name: 'Banana', value: 'banana' },
+		{ name: 'Cherry', value: 'cherry' },
+	];
+
+	return (
+		<div>
+			{/* Example usage of TiSelect */}
+			<TiSelect
+				name="fruitSelection"
+				value="banana"
+				options={options}
+				indicator={false}
+				onChange={(value) => console.log('Selected fruit:', value)}
+			/>
+		</div>
+	);
+}
+```

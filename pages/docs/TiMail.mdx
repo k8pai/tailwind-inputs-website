@@ -1,0 +1,87 @@
+# Ti Mail
+
+The `TiMail` component is a specialized text input field designed for entering email addresses. It supports validation and provides visual feedback based on the validity of the entered email.
+
+## Usage
+
+**Import the Component**: In the file where you want to use the `TiMail` component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiMail } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Button**: You can now use the `TiMail` component in your JSX by passing the necessary props:
+
+```jsx copy {5-11}
+function App() {
+	return (
+		<div>
+			{/* Example usage of TiMail */}
+			<TiMail
+				name="emailField"
+				label="Email"
+				validate="email"
+				error="Please enter a valid email address"
+				// ...other props
+			/>
+		</div>
+	);
+}
+```
+
+## Props
+
+-   `name` (required): The name of the email input field. This is used to identify the input in the form.
+
+-   `label`: The label for the input field.
+
+-   `validate`: A string that indicates the type of validation to apply. Use `'email'` to validate email addresses.
+
+-   `error`: An error message to display when the entered email is invalid.
+
+-   `defaultValue`: The default value for the input field.
+
+-   `autoComplete`: Indicates whether browser auto-completion is enabled (`'on'` or `'off'`).
+
+-   `style`: An object to customize the component's style.
+
+-   `loader`: Indicates whether to display a loader animation during validation.
+
+-   `disabled`: Indicates whether the input field is disabled.
+
+-   `mandatory`: Indicates whether the field is mandatory.
+
+-   `className`: Additional CSS class name(s) for styling purposes.
+
+## Examples
+
+### Basic Usage
+
+```jsx copy
+<TiMail
+	name="userEmail"
+	label="Email"
+	validate="email"
+	error="Please enter a valid email address"
+/>
+```
+
+### Custom Styling
+
+```jsx copy
+<TiMail
+	name="customEmail"
+	label="Your Email"
+	validate="email"
+	error="Invalid email format"
+	style={{
+		mode: 'dark',
+		bg: 'bg-gray-900',
+		color: 'text-white',
+		input: 'text-lg py-2',
+		valid: 'border-green-500',
+		invalid: 'border-red-500',
+	}}
+/>
+```

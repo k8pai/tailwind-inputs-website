@@ -1,0 +1,51 @@
+# Ti Select
+
+The `TiSearch` component is a simple and customizable search input field built using React. It provides a straightforward way to create a search input with options to input and clear search terms.
+
+## Usage
+
+**Import the Component**: In the file where you want to use the `TiSearch` component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiSearch } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Component**: You can now use the `TiSearch` component in your JSX by passing the necessary props:
+
+```jsx copy {5-11}
+function App() {
+	return (
+		<div>
+			{/* Example usage of TiSearch */}
+			<TiSearch
+				placeholder="Search items..."
+				onChange={(searchTerm) =>
+					console.log('Search term:', searchTerm)
+				}
+				onSubmit={(searchTerm) => console.log('Submitted:', searchTerm)}
+			/>
+		</div>
+	);
+}
+```
+
+## Props
+
+The `TiSearch` component accepts the following props:
+
+-   `placeholder`: The placeholder text to display in the search input field.
+-   `onChange`: A callback function triggered whenever the search input changes. It passes the current search term.
+-   `onSubmit`: A callback function triggered when the search form is submitted. It passes the search term.
+
+## Example
+
+Here's an example demonstrating how to use the `TiSearch` component with various props:
+
+```jsx copy
+<TiSearch
+	placeholder="Search users..."
+	onChange={(searchTerm) => console.log('Search term:', searchTerm)}
+	onSubmit={(searchTerm) => console.log('Submitted:', searchTerm)}
+/>
+```

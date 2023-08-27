@@ -1,8 +1,4 @@
 {
-	"Getting Started": {
-		"type": "separator",
-		"title": "Getting Started"
-	},
 	"getting-started": "Getting Started",
 	"Components": {
 		"type": "separator",
@@ -29,11 +25,11 @@
 	"TiText": "Ti text",
 	"TiTextarea": "Ti textarea",
 	"TiToggle": "Ti toggle",
-	"Validations": {
+	"---": {
 		"type": "separator",
 		"title": "Additionals"
 	},
-
+	"examples": "Examples",
 	"contact": {
 		"title": "Contact ↗",
 		"type": "page",

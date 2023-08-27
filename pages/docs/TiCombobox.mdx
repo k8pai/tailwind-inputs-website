@@ -5,30 +5,36 @@ import { Callout } from 'nextra/components'
 
 ## Usage
 
-To use the `TiCombobox` component in your React application, follow these steps:
+**Import the Component**: In the file where you want to use the TiCombobox component, import it at the top of the file:
 
-Import the `TiCombobox` component in the file where you want to use the component.
-
-```jsx copy
+```jsx copy {2}
+import React from 'react';
 import { TiCombobox } from '@k8pai/tailwind-inputs';
 ```
 
-Incorporate the `TiCombobox` component in your JSX code, providing appropriate props.
+**Render the component**: You can now use the `TiCombobox` component in your JSX by passing the necessary props:
 
-```jsx copy
-<TiCombobox
-	name="example"
-	options={[
-		{ id: 1, name: 'Option 1', value: 'option1' },
-		{ id: 2, name: 'Option 2', value: 'option2' },
-		// ...other options
-	]}
-	placeholder="Select an option"
-	onChange={(selectedOption) => {
-		// Handle selected option
-		console.log('Selected:', selectedOption);
-	}}
-/>
+```jsx copy {5-17}
+function Demo() {
+	return (
+		<div>
+			{/* Example usage of TiCombobox */}
+			<TiCombobox
+				name="example"
+				options={[
+					{ id: 1, name: 'Option 1', value: 'option1' },
+					{ id: 2, name: 'Option 2', value: 'option2' },
+					// ...other options
+				]}
+				placeholder="Select an option"
+				onChange={(selectedOption) => {
+					// Handle selected option
+					console.log('Selected:', selectedOption);
+				}}
+			/>
+		</div>
+	);
+}
 ```
 
 ## Props

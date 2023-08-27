@@ -34,19 +34,22 @@ const Heading = () => {
 const Navigation = () => {
 	return (
 		<div className="space-x-px flex items-center justify-center my-14">
-			<Link href={`/docs`} className="text-sky-500">
+			<Link href={`/docs/getting-started`} className="text-sky-500">
 				Get Started
 			</Link>
 			<BsDot />
-			<Link href={`/docs`} className="text-sky-500">
+			<Link href={`/docs/getting-started`} className="text-sky-500">
 				Docs
 			</Link>
 			<BsDot />
-			<Link href={`/docs`} className="text-sky-500">
+			<Link href={`/examples`} className="text-sky-500">
 				Examples
 			</Link>
 			<BsDot />
-			<Link href={`/docs`} className="text-sky-500">
+			<Link
+				href={`https://github.com/k8pai/tailwind-inputs`}
+				className="text-sky-500"
+			>
 				Github
 			</Link>
 		</div>

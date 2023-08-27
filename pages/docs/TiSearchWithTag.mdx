@@ -1,0 +1,64 @@
+# Ti Search With Tag
+
+The `TiSearchWithTag` component is a versatile search input field with tag functionality, built using React. It allows users to input tags related to a specific category or label.
+
+## Usage
+
+**Import the Component**: In the file where you want to use the `TiSearchWithTag` component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiSearchWithTag } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Button**: You can now use the `TiButton` component in your JSX by passing the necessary props:
+
+```jsx copy {5-12}
+function App() {
+	return (
+		<div>
+			{/* Example usage of TiButton */}
+			<TiSearchWithTag
+				name="tags"
+				label="Categories"
+				infoNote="Space are not allowed for tags, try snake casing."
+				buttonText="Add Tag"
+				fallback="No Tags Selected"
+				getTags={(tags) => console.log('Selected tags:', tags)}
+			/>
+		</div>
+	);
+}
+```
+
+## Props
+
+The `TiSearchWithTag` component accepts the following props:
+
+-   `name` (required): A unique identifier for the component.
+-   `label`: The label to display above the input.
+-   `style`: An object to customize the component's appearance (e.g., mode, size, etc.).
+-   `infoNote`: A note or instruction to provide additional information about tag input.
+-   `splitter`: The character(s) used to separate tags (default is space).
+-   `fallback`: The text to display when no tags are selected.
+-   `buttonText`: The text for the add button (if not using a custom button component).
+-   `placeholder`: The placeholder text for the input.
+-   `autoComplete`: The autocomplete attribute for the input.
+-   `buttonComponent`: A custom React component to use as the add button (e.g., an icon).
+-   `fallbackComponent`: A custom React component to use for the fallback content (e.g., an icon).
+-   `getTags`: A callback function triggered when tags are added or removed.
+
+## Example
+
+Here's an example demonstrating how to use the `TiSearchWithTag` component with various props:
+
+```jsx copy
+<TiSearchWithTag
+	name="tags"
+	label="Categories"
+	infoNote="Enter categories separated by commas."
+	buttonText="Add Category"
+	fallback="No Categories Selected"
+	getTags={(tags) => console.log('Selected categories:', tags)}
+/>
+```

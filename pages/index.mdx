@@ -5,7 +5,8 @@ import {
 	Features,
 } from '../components/helpers';
 import { Bleed } from 'nextra-theme-docs';
-
+import { Callout } from 'nextra/components'
+ 
 <Bleed>
 
 # <Heading />
@@ -114,12 +115,15 @@ A combination of stable and unstable versions of the components are in the list.
 -   TiTextarea
 -   TiToggle ✅
 
-<details>
-	<summary>Note</summary>
-    **Stable versions** ✅ - components that need no further updates for working features and are currently fine-grained to use. <br />
-    **Unstable versions** - are currently in updates and may have strict changes in props or use cases.
+---
 
-    Whenever using an unstable Component, it is a good practice to go through the
-    latest documentation...
+<Callout type="info" emoji="✅">
+	**Stable versions** - components that need no further updates for working
+	features and are currently fine-grained to use. <br />
+</Callout>
 
-</details>
+<Callout type="warning" emoji="⚠️">
+	**Unstable versions** - are currently in updates and may have strict changes
+	in props or use cases. Whenever using an unstable Component, it is a good
+	practice to go through the latest documentation...
+</Callout>

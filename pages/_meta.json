@@ -8,6 +8,10 @@
 		"title": "Docs",
 		"type": "page"
 	},
+	"examples": {
+		"title": "Examples",
+		"type": "page"
+	},
 	"contact": {
 		"title": "Contact ↗",
 		"type": "page",

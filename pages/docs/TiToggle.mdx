@@ -1,0 +1,69 @@
+# Ti Toggle
+
+The `TiToggle` component is a toggle switch that allows users to switch between two states.
+
+## Usage
+
+**Import the Component**: In the file where you want to use the `TiToggle ` component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiToggle } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Component**: You can now use the `TiToggle ` component in your JSX by passing the necessary props:
+
+```jsx copy {5-11}
+function App() {
+	return (
+		<div>
+			{/* Example usage of TiButton */}
+			<TiToggle
+				name="toggleSwitch"
+				getState={(isToggled) =>
+					console.log('Toggle state:', isToggled)
+				}
+				// ...other props
+			/>
+		</div>
+	);
+}
+```
+
+## Props
+
+-   `name` (required): The name of the toggle switch. This is used to identify the toggle in the form.
+
+-   `style`: An object to customize the component's style, including bar size, button size, colors, and more.
+
+-   `getState`: A callback function that receives the current toggle state when it changes.
+
+## Examples
+
+### Basic Usage
+
+```jsx copy
+<TiToggle
+	name="darkModeToggle"
+	getState={(isToggled) => console.log('Dark mode:', isToggled)}
+/>
+```
+
+### Custom Styling
+
+```jsx copy
+<TiToggle
+	name="customToggle"
+	getState={(isToggled) => console.log('Toggle state:', isToggled)}
+	style={{
+		bar: 'w-16 h-6',
+		btn: 'w-4 h-4 left-1 top-1',
+		btnBg: 'bg-blue-500',
+		barBg: 'bg-gray-200',
+		shadow: 'shadow-lg',
+		duration: 'duration-500',
+		barBorder: 'rounded-md',
+		btnBorder: 'rounded-full',
+	}}
+/>
+```
