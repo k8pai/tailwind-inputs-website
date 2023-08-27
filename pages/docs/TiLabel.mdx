@@ -1,0 +1,60 @@
+# Ti Label
+
+The `TiLabel` component is a simple React component that generates an HTML label element with customizable properties. It allows you to associate a label with an input element, making your forms more accessible and user-friendly.
+
+## Usage
+
+To use the `TiLabel` component, you'll need to import it and include it in your JSX code. Here's how you can integrate it into your project:
+
+```jsx copy
+import React from 'react';
+import { TiLabel } from '@k8pai/tailwind-inputs';
+
+function App() {
+	return (
+		<div>
+			{/* Other components */}
+			<TiLabel name="username" title="Username" />
+			{/* Other components */}
+		</div>
+	);
+}
+
+export default App;
+```
+
+## Props
+
+The `TiLabel` component accepts the following props:
+
+-   `name` (string, required): The id of the input element that the label is associated with.
+-   `title` (string, required): The text content of the label.
+-   `restProps` (object, optional): Any additional props you want to pass to the label element.
+
+## Examples
+
+Basic Example
+
+```jsx copy
+import React from 'react';
+import { TiLabel } from '@k8pai/tailwind-inputs';
+
+function App() {
+	return (
+		<div>
+			<h1>Sign Up</h1>
+			<form>
+				<TiLabel name="username" title="Username" />
+				<input type="text" id="username" />
+
+				<TiLabel name="email" title="Email" />
+				<input type="email" id="email" />
+
+				<button type="submit">Sign Up</button>
+			</form>
+		</div>
+	);
+}
+
+export default App;
+```

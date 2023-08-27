@@ -1,0 +1,109 @@
+import { TiDisclosure } from '@k8pai/tailwind-inputs';
+
+# Ti Disclosure
+
+The `TiDisclosure` component is a React component that provides a collapsible disclosure UI for displaying content with optional animations. It is designed to be customizable and user-friendly.
+
+## Usage
+
+To use the `TiDisclosure` component, you'll need to import it and include it in your JSX code. Here's how you can integrate it into your project:
+
+```jsx copy
+import React from 'react';
+import { TiDisclosure } from '@k8pai/tailwind-inputs';
+
+function App() {
+	const options = [
+		{
+			id: 1,
+			title: 'Section 1',
+			content: 'Content of section 1...',
+			isOpen: false,
+		},
+		{
+			id: 2,
+			title: 'Section 2',
+			content: 'Content of section 2...',
+			isOpen: false,
+		},
+		// Add more sections as needed
+	];
+
+	return (
+		<div>
+			{/* Other components */}
+			<TiDisclosure name="Disclosure Example" options={options} />
+			{/* Other components */}
+		</div>
+	);
+}
+
+export default App;
+```
+
+## Props
+
+The TiDisclosure component accepts the following props:
+
+-   `name` (string, required): The name or label for the disclosure component.
+-   `options` (array, required): An array of objects representing the sections to be displayed. Each object should have the following properties:
+    -   `id` (number, required): Unique identifier for the section.
+    -   `title` (string, required): Title of the section.
+    -   `content` (string, required): Content of the section to be revealed when expanded.
+    -   `isOpen` (boolean, required): Initial state of section visibility (expanded or collapsed).
+-   `Component` (React component, optional): The icon component to be displayed next to the section title. Default is `MdKeyboardArrowDown`.
+-   `className` (string, optional): Additional CSS classes to be applied to the component.
+-   `style` (object, optional): Custom styling options for the component. Available properties:
+    -   `mode` (string): Color mode ('dark' or 'light').
+-   Other style properties for customization (size, color, bg, button, padding, content, componentSize, componentStyle).
+
+## Examples
+
+```jsx copy
+import React from 'react';
+import { TiDisclosure } from '@k8pai/tailwind-inputs';
+
+function App() {
+	const sections = [
+		{
+			id: 1,
+			title: 'Getting Started',
+			content: 'Learn how to get started with our application.',
+			isOpen: false,
+		},
+		{
+			id: 2,
+			title: 'Advanced Features',
+			content: 'Explore advanced features and customization options.',
+			isOpen: false,
+		},
+	];
+
+	return (
+		<div>
+			<h1>Welcome to our Documentation</h1>
+			<TiDisclosure name="Sections" options={sections} />
+		</div>
+	);
+}
+
+export default App;
+```
+
+<TiDisclosure
+	name="Sections"
+	options={[
+		{
+			id: 1,
+			title: 'Getting Started',
+			content: 'Learn how to get started with our application.',
+			isOpen: false,
+		},
+		{
+			id: 2,
+			title: 'Advanced Features',
+			content: 'Explore advanced features and customization options.',
+			isOpen: false,
+		},
+	]}
+/>

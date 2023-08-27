@@ -1,0 +1,52 @@
+# Ti Button
+
+## Usage
+
+**Import the Component**: In the file where you want to use the TiButton component, import it at the top of the file:
+
+```jsx copy {2}
+import React from 'react';
+import { TiButton } from '@k8pai/tailwind-inputs';
+```
+
+**Render the Button**: You can now use the `TiButton` component in your JSX by passing the necessary props:
+
+```jsx copy {6-8}
+function App() {
+	return (
+		<div>
+			{/* <button onClick={() => alert('Button clicked')}>Click me!</button> */}
+			{/* Example usage of TiButton */}
+			<TiButton
+				title="Click me!"
+				onClick={() => alert('Button clicked')}
+			/>
+		</div>
+	);
+}
+```
+
+## Props
+
+The `TiButton` component accepts the following props:
+
+-   **title** (required): The text that will be displayed on the button.
+-   **...props**: Any additional props you want to pass to the underlying button element.
+
+You can use any valid HTML button props such as `onClick`, `className`, `style`, etc. These props will be passed down to the underlying button element created by the `TiButton` component.
+
+## Examples
+
+Here's a more comprehensive example demonstrating how to use the `TiButton` component with various props:
+
+```jsx copy
+<TiButton
+	title="Submit"
+	onClick={handleSubmit}
+	className="primary-button"
+	style={{ backgroundColor: 'blue', color: 'white' }}
+	disabled={isSubmitting}
+/>
+```
+
+In this example, the button will display "Submit" as its title, trigger the `handleSubmit` function when clicked, have a CSS class of "primary-button," a blue background, white text color, and will be disabled when the `isSubmitting` variable is `true`.

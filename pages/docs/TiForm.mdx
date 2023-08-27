@@ -1,0 +1,116 @@
+import { TiButton, TiText, TiForm, TiMail } from '@k8pai/tailwind-inputs';
+
+# Ti Form
+
+The `TiForm` component is a React component that encapsulates a form element and provides context for managing form state, validation, and submission. It simplifies the process of creating and managing forms in your React applications.
+
+## Usage
+
+To use the `TiForm` component, you'll need to import it and include it in your JSX code. Here's how you can integrate it into your project:
+
+```jsx copy
+import React from 'react';
+import { TiForm, TiButton } from '@k8pai/tailwind-inputs'; // Update the path accordingly
+
+function App() {
+	const handleSubmit = (values) => {
+		console.log('Form submitted with values:', values);
+	};
+
+	return (
+		<div>
+			<TiForm onSubmit={handleSubmit}>
+				{/* Form fields */}
+
+				<TiButton type="submit" title="Submit" />
+			</TiForm>
+		</div>
+	);
+}
+
+export default App;
+```
+
+## Props
+
+The `TiForm` component accepts the following props:
+
+-   `initialValues` (object, optional): Initial values for the form fields.
+-   `className` (string, optional): Additional CSS classes to be applied to the form element.
+-   `onSubmit` (function, optional): A callback function to be executed when the form is submitted. It receives the form values as an argument.
+-   `children` (React node, required): The form elements, including input fields, buttons, etc.
+
+### Context
+
+The `TiForm` component provides a context through `TiFormContext`. This context includes the following values that can be consumed by child components within the form:
+
+-   `values`: The current form field values.
+-   `setValues`: A function to update the form field values.
+-   `submit`: A boolean indicating whether the form has been submitted.
+-   `setSubmit`: A function to update the submit state.
+-   `valid`: An array of field names that are currently valid (used for validation purposes).
+-   `setValid`: A function to update the valid field names.
+
+## Examples
+
+Basic Example
+
+```jsx copy
+import React from 'react';
+import { TiButton, TiForm, TiMail } from '@k8pai/tailwind-inputs';
+
+function App() {
+	const handleSubmit = (values) => {
+		console.log('Form submitted with values:', values);
+	};
+
+	return (
+		<div>
+			<h1>Contact Us</h1>
+			<TiForm onSubmit={handleSubmit}>
+				<input type="text" name="name" />
+
+				<TiMail name="email" label="Mail" />
+
+				<TiButton title="Submit" type="submit" />
+			</TiForm>
+		</div>
+	);
+}
+
+export default App;
+```
+
+    <div className="my-16 mx-auto">
+    	<h1 className="text-3xl font-bold text-center">Mess around...</h1>
+    	<TiForm className="w-" onSubmit={(values) => console.log(values)}>
+    		<TiText
+    			name={'username'}
+    			label={'Username'}
+    			placeholder={'Enter Your Username'}
+    			mandatory
+    			style={{
+    				label: 'text-white font-semibold tracking-wide ml-3',
+    			}}
+    			validate={'username'}
+    			error="This is not a valid username!"
+    			className={'space-y-2'}
+    		/>
+    		<TiMail
+    			name="email"
+    			label="Mail"
+    			placeholder={'Enter Your mail'}
+    			mandatory
+    			style={{
+    				label: 'text-white font-semibold tracking-wide ml-3',
+    			}}
+    			error="This is not a valid username!"
+    			className={'space-y-2 mx-auto'}
+    			/>
+    		<TiButton
+    			title="Submit"
+    			className={
+    				'px-3 py-2 mt-2 rounded-lg text-white bg-green-500/90 '
+    			} />
+    	</TiForm>
+    </div>

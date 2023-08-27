@@ -1,0 +1,63 @@
+import { TiFloatingLabel } from '@k8pai/tailwind-inputs';
+
+# Ti Floating label
+
+The `TiFloatingLabel` component is a React component that implements a floating label input field. It provides a modern and interactive way to gather user input with a floating label that animates when the input field is focused or contains a value.
+
+## Usage
+
+To use the `TiFloatingLabel` component, you'll need to import it and include it in your JSX code. Here's how you can integrate it into your project:
+
+```jsx copy
+import React from 'react';
+import { TiFloatingLabel } from '@k8pai/tailwind-inputs';
+
+function App() {
+	return (
+		<div>
+			{/* Other components */}
+			<TiFloatingLabel name="username" label="Username" />
+			{/* Other components */}
+		</div>
+	);
+}
+
+export default App;
+```
+
+## Props
+
+The TiFloatingLabel component accepts the following props:
+
+-   `name` (string, optional): The name of the input field.
+-   `label` (string, optional): The label to be displayed as the floating label.
+-   `style` (object, optional): Custom styling options for the component. Available properties:
+    -   `labelPosition` (string): Position of the label ('center' or 'border').
+    -   `mode` (string): Color mode ('dark' or 'light').
+
+Other style properties for customization (transformFrom, size, color, bg, border, disabled, label, input, default, valid, invalid, error).
+
+## Example
+
+Basic Example
+
+```jsx copy
+import React from 'react';
+import { TiFloatingLabel } from '@k8pai/tailwind-inputs';
+
+function App() {
+	return (
+		<div>
+			<h1>Sign Up</h1>
+			<form>
+				<TiFloatingLabel name="username" label="Username" />
+				<TiFloatingLabel name="email" label="Email" />
+				<TiFloatingLabel name="password" label="Password" />
+				<button type="submit">Sign Up</button>
+			</form>
+		</div>
+	);
+}
+
+export default App;
+```

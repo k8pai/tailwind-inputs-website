@@ -1,0 +1,73 @@
+import { TiModal } from '@k8pai/tailwind-inputs';
+
+# Ti Modal
+
+The `TiModal` component is a versatile and customizable modal popup component for React applications. It provides a simple way to display information or messages to users in a visually appealing overlay.
+
+# Usage
+
+To use the `TiModal` component, you'll need to import it and include it in your JSX code. Here's how you can integrate it into your project:
+
+```jsx copy
+import React from 'react';
+import { TiModal } from '@k8pai/tailwind-inputs';
+
+function App() {
+	return (
+		<div>
+			{/* Other components */}
+			<TiModal
+				heading="Welcome!"
+				content="Thank you for visiting our website. We hope you find our content helpful."
+				buttonText="Got it!"
+			/>
+			{/* Other components */}
+		</div>
+	);
+}
+
+export default App;
+```
+
+## Props
+
+The `TiModal` component accepts the following props:
+
+-   `heading` (string, optional): The heading or title for the modal.
+-   `content` (string, optional): The content or message to display within the modal.
+-   `buttonText` (string, optional): The text to display on the modal's button.
+-   `restProps` (object, optional): Any additional props you want to pass to the modal container.
+
+## Examples
+
+Basic Example
+
+```jsx copy
+import React from 'react';
+import { TiModal } from '@k8pai/tailwind-inputs';
+
+function App() {
+	return (
+		<div>
+			<h1>Welcome to Our Website</h1>
+			<TiModal
+				heading="Stay Informed!"
+				content="Sign up for our newsletter to receive the latest updates and news."
+				buttonText="Sign Up"
+			/>
+		</div>
+	);
+}
+
+export default App;
+```
+
+<div className="relative">
+
+<TiModal
+	heading="Stay Informed!"
+	content="Sign up for our newsletter to receive the latest updates and news."
+	buttonText="Sign Up"
+	className="mx-auto"
+/>
+</div>

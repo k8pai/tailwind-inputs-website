@@ -1,0 +1,140 @@
+import Tester from '../../components/tester';
+import { TiCombobox } from '@k8pai/tailwind-inputs';
+import { Callout } from 'nextra/components'
+ 
+# Ti Combobox
+
+## Usage
+
+To use the `TiCombobox` component in your React application, follow these steps:
+
+Import the `TiCombobox` component in the file where you want to use the component.
+
+```jsx copy
+import { TiCombobox } from '@k8pai/tailwind-inputs';
+```
+
+Incorporate the `TiCombobox` component in your JSX code, providing appropriate props.
+
+```jsx copy
+<TiCombobox
+	name="example"
+	options={[
+		{ id: 1, name: 'Option 1', value: 'option1' },
+		{ id: 2, name: 'Option 2', value: 'option2' },
+		// ...other options
+	]}
+	placeholder="Select an option"
+	onChange={(selectedOption) => {
+		// Handle selected option
+		console.log('Selected:', selectedOption);
+	}}
+/>
+```
+
+## Props
+
+The `TiCombobox` component accepts the following props:
+
+-   `name` **(string, required):** The name of the combobox, which is used as an identifier for the component.
+
+-   `value` **(object, optional):** An object representing the currently selected option's name and value.
+
+-   `indicator` **(boolean, optional, default: true):** Determines whether to show a checkmark indicator next to the selected option.
+
+-   `options` **(array of objects, required):** An array of objects representing the available options. Each object must have the following properties:
+
+        - `id` (number, required): A unique identifier for the option.
+
+        - `name` (string, required): The display name of the option.
+
+        - `value` (string, required): The value associated with the option.
+
+-   `placeholder` **(string, optional, default: 'Select'):** The placeholder text displayed when no option is selected.
+
+-   `onChange` **(function, optional):** A callback function triggered when an option is selected. It receives the selected option as an argument.
+
+-   `style` **(object, optional):** An object containing custom styling properties for the component. The style object should have the following fields:
+
+    -   `size` (string): The size of the combobox.
+
+    -   `indicator` (string): The color of the checkmark indicator.
+
+    -   `color` (string): The text color.
+
+    -   `bg` (string): The background color.
+
+    -   `hovBg` (string): The background color on hover.
+
+    -   `border` (string): The border style.
+
+    -   `informational` (string): Styling for informational messages.
+
+    -   `disabled` (string): Styling for disabled options.
+
+    -   `focusBorder` (string): Border styling when the combobox is focused.
+
+-   `children` **(React elements, optional):** Additional child components that can be added to the TiCombobox.
+
+<Callout emoji="🌙">
+	**mode** - The `style` props can take an additional `mode` field, that is a
+	shortcut to keeping the default `dark` and `light` mode styles preserved.
+	Available values are 'light' and 'dark'.
+</Callout>
+
+## Example
+
+Get started with a sample use case example...
+
+```jsx copy
+import React from 'react';
+import { TiCombobox } from '@k8pai/tailwind-inputs';
+
+const Tester = () => {
+	return (
+		<div className="my-4">
+			<TiCombobox
+				name="example"
+				options={[
+					{ id: 1, name: 'Option 1', value: 'option1' },
+					{ id: 2, name: 'Option 2', value: 'option2' },
+					// ...other options
+				]}
+				style={{
+					mode: 'dark',
+				}}
+				placeholder="Select an option"
+				onChange={(selectedOption) => {
+					console.log('Selected:', selectedOption);
+				}}
+			/>
+		</div>
+	);
+};
+
+export default Tester;
+```
+
+Start typing or select from the drop box...
+
+<div className="my-4">
+	<TiCombobox
+		name="example"
+		options={[
+			{ id: 1, name: 'Option 1', value: 'option1' },
+			{ id: 2, name: 'Option 2', value: 'option2' },
+			{ id: 3, name: 'Option 3', value: 'option3' },
+			{ id: 4, name: 'Option 4', value: 'option4' },
+			// ...other options
+		]}
+		style={{
+			mode: 'dark',
+		}}
+		placeholder="Select an option"
+		onChange={(selectedOption) => {
+			console.log('Selected:', selectedOption);
+		}}
+	/>
+</div>
+
+More examples on `TiCombobox` are available in [here](/examples)
