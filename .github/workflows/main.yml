@@ -8,10 +8,22 @@ jobs:
         steps:
             - name: Clone Repository
               uses: actions/checkout@v3
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '16'
+
+            - name: Install pnpm
+              run: |
+                  echo "Running Installing pnpm...."
+                  npm install -g pnpm
+
             - name: Install Dependencies
               run: |
                   echo "Running Installing Dependencies...."
                   pnpm install
+
             - name: Build
               run: |
                   echo "Running Build...."
